@@ -3,21 +3,21 @@ sudo: required
 services: 
   - docker
 
-  before_install:
+before_install:
   - docker build -t sselvaganesh/docker-react-img -f Dockerfile.dev .
 
-  script:
+script:
   - docker run sselvaganesh/docker-react-img npm run test -- --coverage
 
-  deploy:
-    provider: elasticbeanstalk
-    region: "us-east-2"
-    app: "docker-reach-project"
-    env: "DockerReachProject-env"
-    bucket_name: "elasticbeanstalk-us-east-2-814677918993"
-    bucket_path: "docker-reach-project"
-    on:
-      branch: master
-    access_key_id: $AWS_ACCESS_KEY
-    secrect_access_key: 
-      secure: "$AWS_SECRECT_KEY"
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-reach-project"
+  env: "DockerReachProject-env"
+  bucket_name: "elasticbeanstalk-us-east-2-814677918993"
+  bucket_path: "docker-reach-project"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secrect_access_key: 
+    secure: "$AWS_SECRECT_KEY"

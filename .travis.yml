@@ -14,7 +14,8 @@ deploy:
     branch: master
   provider: elasticbeanstalk
   access_key_id: $AWS_ACCESS_KEY
-  secrect_access_key: $AWS_SECRECT_KEY
+  secrect_access_key: 
+    secure: $AWS_SECRECT_KEY
   region: us-east-2
   app: docker-reach-project
   env: DockerReachProject-env

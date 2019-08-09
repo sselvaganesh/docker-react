@@ -1,11 +1,15 @@
 sudo: required
+
 services: 
   - docker
-before_install:
+
+  before_install:
   - docker build -t sselvaganesh/docker-react-img -f Dockerfile.dev .
-script:
+
+  script:
   - docker run sselvaganesh/docker-react-img npm run test -- --coverage
-deploy:
+
+  deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
   app: "docker-reach-project"

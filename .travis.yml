@@ -10,15 +10,13 @@ script:
   - docker run -e CI=true sselvaganesh/docker-react-img npm run test -- --coverage
 
 deploy:
+  on:
+    branch: master
   provider: elasticbeanstalk
-  access_key_id: 
-    secure: $AWS_ACCESS_KEY
-  secrect_access_key: 
-    secure: "$AWS_SECRECT_KEY"
+  access_key_id: $AWS_ACCESS_KEY
+  secrect_access_key: $AWS_SECRECT_KEY
   region: "us-east-2"
   app: "docker-reach-project"
   env: "DockerReachProject-env"
   bucket_name: "elasticbeanstalk-us-east-2-814677918993"
   bucket_path: "docker-reach-project"
-  on:
-    branch: master

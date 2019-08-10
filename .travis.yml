@@ -16,8 +16,8 @@ deploy:
   access_key_id: $AWS_ACCESS_KEY
   secrect_access_key: 
     secure: $AWS_SECRECT_KEY
-  region: us-east-2
-  app: docker-reach-project
-  env: DockerReachProject-env
-  bucket_name: elasticbeanstalk-us-east-2-814677918993
-  bucket_path: docker-reach-project
+  region: "us-east-2"
+  app: "docker-reach-project"
+  env: "DockerReachProject-env"
+  bucket_name: "elasticbeanstalk-us-east-2-814677918993"
+  bucket_path: "docker-reach-project"
